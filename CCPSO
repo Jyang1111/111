@@ -1,0 +1,35 @@
+
+# 粒子群循环：根据给出的迭代次数进行循环
+f = 集装箱个数
+N = 逼近限制次数
+# 读值
+
+# 算法迭代
+t = CPU time
+n = 当前迭代次数
+nc = 总数
+# 当离最优值距离很近时，停止迭代
+while n < N:
+    if n0 % nc == 0:
+    if n0 % nc == 0:
+        S.chaos_p() # 进入混沌
+    if np.random.uniform(0, 1) < 0.7:
+        S.evolution() # 迭代
+    else:
+        S.evolution_speed() # 加速迭代
+    opt = opt + [S.opt]
+    n += 1
+    if opt[-1] != opt[-2]:
+        n0 = 1
+    else:
+        n0 += 1
+    if n == 100 or n == 150 or n == 200 or n == 250 or n == 300:
+        print('*', S.opt, '*')
+    I = I + [n]
+
+# 收敛曲线
+# S.test()  # 测试：画出最优解的折线图
+print(S.opt, ' ', time.perf_counter() - start)  # 输出最优值、程序运行耗时
+# 存储
+with open('c_%d' % f, 'wb') as file_1:
+    pickle.dump(S, file_1)
